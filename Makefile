@@ -1,6 +1,6 @@
-SOURCES=$(wildcard *.asm)
+SOURCES=$(wildcard src/*/*.asm)
 OBJECTS=$(SOURCES:.asm=.o)
-EXECUTABLE=helloworld
+EXECUTABLE=bin/helloworld
 
 all: $(SOURCES) $(EXECUTABLE)
 
@@ -11,4 +11,4 @@ $(OBJECTS): $(SOURCES)
 	nasm -f elf -g $(SOURCES)
 
 clean:
-	rm -rf *o $(EXECUTABLE)
+	rm -rf src/*/*.o $(EXECUTABLE)
